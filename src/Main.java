@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class Main {
 
-    // 1. parenthesesCheck
     public static boolean parenthesesCheck(String parentheses) {
         int equal = 0;
 
@@ -20,7 +19,6 @@ public class Main {
     }
 
 
-    // 2. reverseInteger
     public static String reverseInteger(int n) {
         if (n == 0) return "0";
 
@@ -33,7 +31,6 @@ public class Main {
             num /= 10;
         }
 
-        // Add negative sign back if original was negative
         if (n < 0) {
             reversed = "-" + reversed;
         }
@@ -42,7 +39,6 @@ public class Main {
     }
 
 
-    // 3. encryptThis
     public static String encryptThis(String input) {
         String[] words = input.split(" ");
         String result = "";
@@ -79,7 +75,6 @@ public class Main {
     }
 
 
-    // 4. decipherThis
     public static String decipherThis(String message) {
         String[] words = message.split(" ");
         StringBuilder result = new StringBuilder();
@@ -95,12 +90,10 @@ public class Main {
     }
 
     public static String decipherWord(String encryptedWord) {
-        // If it's a short word, return as-is
         if (encryptedWord.length() <= 2 ) {
             return encryptedWord;
         }
 
-        // Find where number ends
         int i = 0;
         while (i < encryptedWord.length() && Character.isDigit(encryptedWord.charAt(i))) {
             i++;
@@ -115,7 +108,6 @@ public class Main {
             return c1 + letters;
         }
 
-        // Swap back: first char + (last letter of encrypted part) + middle + (first letter of encrypted part)
         String l1 = letters.substring(0, 1);
         String lLast = letters.substring(letters.length() - 1);
         String lMiddle = letters.substring(1, letters.length() - 1);
